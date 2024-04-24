@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- React version 18 -->
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="li"></div>
+</body>
+<script>
+    const postItem = React.createElement(
+        'div',
+        {
+            className: 'post-item'
+        }, React.createElement(
+            'h2',
+            {
+                title: 'This is my title',
+                style: {
+                    color: 'red'
+                }
+            }, 'Learn React Version 18'
+        ), React.createElement('p', { style: { color: 'blue' } }, 'Content card <p>')
+    )
+
+    // Get root element
+    //@Version 18
+    const container = document.getElementById('root')
+    const root = ReactDOM.createRoot(container)
+    root.render(postItem)
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- React version 17 -->
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<script type="text/babel">
+    let cars = ["Mec", "Toyota", "Mazda", "BMW"]
+    function Button({ title, primary }) {
+        console.log(primary);
+        return <button>{title}</button>
+    }
+    function Button2({ children }) {
+        return <button>{children}</button>
+    }
+
+    function Input({ label, ...inputProps }) {
+        return (
+            <div>
+                <label>{label}</label>
+                <input {...inputProps} />
+            </div>
+        )
+    }
+
+    function List({ data }) {
+        return (
+            <ul>
+                {data.map(item => <li key={item}>{item}</li>)}
+            </ul>
+        )
+    }
+
+    function App() {
+        return (
+            <div id='wrapper'>
+                <List data={cars} />
+                <Input label="Username" placeholder="Enter your username" onFocus={() => { console.log(Math.random); }} />
+                <Button primary={false} title="Click me" />
+                <Button2>Click me again</Button2>
+            </div>
+        )
+    }
+    ReactDOM.render(<App />, document.getElementById('root'))
+</script>
+
+</html>

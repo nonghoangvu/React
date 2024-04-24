@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- React version 17 -->
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<script type="text/babel">
+    function Item2({ title, content, callBack = () => { } }) {
+        callBack()
+        return (
+            < div >
+                <h1>{title}</h1>
+                <p>{content}</p>
+            </div >
+        )
+    }
+
+    function Item(params) {
+        return (
+            <div>
+                <h1>{params.title}</h1>
+                <p>{params.content}</p>
+            </div>
+        )
+    }
+
+    function App() {
+        return (
+            <div>
+                <Item
+                    title="This is my title..."
+                    content="Hello world"
+                />
+                <Item2
+                    title="This is my title..."
+                    content="Hello world"
+                    callBack={() => { console.log('Hello world'); }}
+                />
+            </div>
+        )
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'))
+</script>
+
+</html>

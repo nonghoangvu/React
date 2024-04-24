@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- React version 18 -->
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<script type="text/babel">
+    const jsx = (
+        <React.Fragment>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+        </React.Fragment>
+    )
+
+    const jsx2 = React.createElement(
+        React.Fragment,
+        null,
+        React.createElement('h1', null, 'Heading 1.1'),
+        React.createElement('h2', null, 'Heading 2.2'),
+    )
+
+    const courses = [
+        {
+            name: "Nong Hoang Vu"
+        },
+        {
+            name: "Hacker Loi"
+        },
+        {
+            name: "Animal"
+        }
+    ]
+    const postItem = (
+        <ul>
+            {courses.map((courses, index) => <li key={index}>{courses.name}</li>)}
+        </ul>
+    )
+    const container = document.getElementById('root')
+    const root = ReactDOM.createRoot(container)
+    root.render(postItem)
+    root.render(jsx)
+    root.render(jsx2)
+</script>
+
+</html>

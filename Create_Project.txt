@@ -1,0 +1,3 @@
+npx create-react-app [project name]
+OR
+create-react-app [project name]

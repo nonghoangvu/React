@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- React version 17 -->
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="li"></div>
+</body>
+<script>
+    const postItem = React.createElement(
+        'div',
+        {
+            className: 'post-item'
+        }, React.createElement(
+            'h2',
+            {
+                title: 'This is my title'
+            }, 'Learn React Version 17'
+        ), React.createElement('p', null, 'Content card <p>')
+    )
+
+    const info = React.createElement(
+        'ul',
+        {}, React.createElement('li', {}, 'Java'), React.createElement('li', {}, "JavaScript")
+    )
+
+    // Get root element
+    const root = document.getElementById('root')
+    const li = document.getElementById('li')
+    ReactDOM.render(postItem, root)
+    ReactDOM.render(info, li)
+</script>
+
+</html>
