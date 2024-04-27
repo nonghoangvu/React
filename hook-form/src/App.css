@@ -1,0 +1,34 @@
+.container{
+  width: 500px;
+}
+input, select {
+  margin: 10px;
+  display: block;
+  border: 1px solid black;
+  width: 20em;
+  height: 40px;
+}
+button{
+  margin: 10px;
+  background-color: gray;
+  color: white;
+  border: 0;
+  width: 20em;
+  height: 40px;
+  font-weight: bold;
+}
+small{
+  color: red;
+  margin-left: 10px;
+}
+.radio{
+  width: 10px;
+}
+.container-gender{
+  display: flex;
+  align-items: center;
+}
+.title{
+  margin: 10px;
+  color: darkgray;
+}
